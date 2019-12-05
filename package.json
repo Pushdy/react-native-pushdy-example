@@ -6,12 +6,26 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "ensure": "yarn install && cd ios && pod install && cd .. && yarn jetify",
+    "cleanBuildAndroid": "rm -rf android/build && rm -rf android/app/build",
+    "cleanCache": "watchman watch-del-all && rm -rf /tmp/metro-bundler-cache-* && rm -rf /tmp/haste-map-react-native-packager-*",
+    "cleanApp": "echo 'Plz do some following steps: \n 1. Clear App cache in Chrome > Application\n 2. Delete app on device\n 3. Do some ios or android configuration\n 3.1. Setup xcode > Preference > Location > set up CLI path here\n 3.2. Fix `/node_modules/react-native-fbsdk/react-native-fbsdk.podspec`\n 3.3. Clear ios derivation folder\n 3.4. todo'",
+    "cleanInstallNodeModule": "rm -rf node_modules && yarn install",
+    "cleanInstallPod": "rm -rf ios/build ios/Pods && cd ios && pod install && cd ..",
+    "cleanIosDerivation": "rm -rf ~/Library/Developer/Xcode/DerivedData",
+    "clean": "yarn cleanBuildAndroid && yarn cleanCache && yarn cleanApp",
+    "clear": "yarn cleanBuildAndroid && yarn cleanCache && yarn cleanInstallNodeModule && yarn cleanInstallPod && yarn cleanApp",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
     "react": "16.9.0",
-    "react-native": "0.61.5"
+    "react-native": "0.61.5",
+    "react-native-gesture-handler": "^1.5.2",
+    "react-native-reanimated": "^1.4.0",
+    "react-native-screens": "^1.0.0-alpha.23",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.10.3"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
