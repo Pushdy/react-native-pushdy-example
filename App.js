@@ -9,17 +9,28 @@
 import React from 'react';
 import AppNavigator from './src/AppNavigator'
 import NavigationService from './src/services/NavigationService'
-
-const App: () => React$Node = () => {
-  return (
-    <AppNavigator
-      ref={navigatorRef => {
-        NavigationService.setTopLevelNavigator(navigatorRef);
-      }}
-      onNavigationStateChange={NavigationService.onNavigationStateChange}
-    />
-  );
-};
+import PushdyMessaging from './src/services/Pushdy/PushdyMessaging';
 
 
-export default App;
+export default class App extends React.Component {
+  componentDidMount() {
+    PushdyMessaging.ensurePermission().then(() => {
+      PushdyMessaging.register();
+    });
+  }
+
+  componentWillUnmount() {
+    PushdyMessaging.unregister();
+  }
+
+  render() {
+    return (
+      <AppNavigator
+        ref={navigatorRef => {
+          NavigationService.setTopLevelNavigator(navigatorRef);
+        }}
+        onNavigationStateChange={NavigationService.onNavigationStateChange}
+      />
+    );
+  }
+}
