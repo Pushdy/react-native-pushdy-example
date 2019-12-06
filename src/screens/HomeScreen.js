@@ -23,7 +23,7 @@ import NavigationService from '../services/NavigationService'
 
 export default class HomeScreen extends React.Component {
   render() {
-    const { params } = this.props.navigation.state;
+    const { params = {} } = this.props.navigation.state;
 
     return (
       <>
@@ -43,9 +43,15 @@ export default class HomeScreen extends React.Component {
                 <Text style={styles.sectionTitle}>Step One</Text>
                 <Text style={styles.sectionDescription}>
                   Edit <Text style={styles.highlight}>src/screens/HomeScreen.js</Text> to change this
-                  screen and then come back to see your edits.
+                  screen.
                 </Text>
               </View>
+
+
+
+              {/*
+              ======== Jump to Hello World Page =======
+              */}
               <View style={styles.sectionContainer}>
                 <Text style={styles.sectionTitle}>Go to another screen</Text>
                 <Text>TS: {params.ts}</Text>
@@ -67,6 +73,9 @@ export default class HomeScreen extends React.Component {
                   </TouchableOpacity>
                 </View>
               </View>
+
+
+
               <View style={styles.sectionContainer}>
                 <Text style={styles.sectionTitle}>See Your Changes</Text>
                 <Text style={styles.sectionDescription}>

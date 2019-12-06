@@ -4,7 +4,7 @@ import NavigationService from "../services/NavigationService";
 
 export default class HelloWorldScreen extends React.Component {
   render() {
-    const { params } = this.props.navigation.state;
+    const { params = {} } = this.props.navigation.state;
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Hello World Screen</Text>
