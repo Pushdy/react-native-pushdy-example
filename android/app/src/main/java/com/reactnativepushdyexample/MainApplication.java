@@ -10,6 +10,8 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
+import com.reactNativePushdy.PushdySdk;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -44,6 +46,10 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this); // Remove this line if you don't want Flipper enabled
+
+    // Pushdy init
+    String pushdyClientKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTQ0NTMyNTU5NiIsImFwcF9pZCI6InJlYWN0X25hdGl2ZV9wdXNoZHlfZXhhbXBsZSIsImlhdCI6MTU3NTU0MDM0NX0.Dt81jYANo4QzV_q8JhZxfSTzq44SivUa-yCwPteyCiE";
+    PushdySdk.getInstance().initWithContext(pushdyClientKey, this);
   }
 
   /**
