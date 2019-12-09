@@ -3,6 +3,10 @@ import { View, Text, TouchableOpacity, } from 'react-native';
 import NavigationService from "../services/NavigationService";
 
 export default class HelloWorldScreen extends React.Component {
+  static navigationOptions = ({ navigation }) => ({
+    headerTitle: "Hello World",
+  });
+
   render() {
     const { params = {} } = this.props.navigation.state;
     return (

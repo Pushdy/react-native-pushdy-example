@@ -22,6 +22,10 @@ import NavigationService from '../services/NavigationService'
 
 
 export default class HomeScreen extends React.Component {
+  static navigationOptions = ({ navigation }) => ({
+    headerTitle: "Home",
+  });
+
   render() {
     const { params = {} } = this.props.navigation.state;
 
