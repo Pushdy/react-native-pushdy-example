@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "839440398189",
+    "firebase_url": "https://react-native-pushdy-example.firebaseio.com",
+    "project_id": "react-native-pushdy-example",
+    "storage_bucket": "react-native-pushdy-example.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839440398189:android:cc593e63ae2ba6e67a8c64",
+        "android_client_info": {
+          "package_name": "com.reactnativepushdyexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839440398189-4kt8ekntl32b55se0rhc84envs415169.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNAwg2ZYHm3Ll3llnWzu8iY6ptDqsTcLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839440398189-4kt8ekntl32b55se0rhc84envs415169.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
