@@ -9,6 +9,12 @@ import OpenAppSettings from 'react-native-app-settings';
 
 import ColorLog from '../ColorLog'
 
+/**
+ * Use react-navigation library as app router
+ */
+import NavigationService from '../NavigationService'
+
+
 class PushdyMessaging {
   debug = true;
   log = new ColorLog({}, {prefix: '[PushdyMessaging] '});
@@ -118,6 +124,29 @@ class PushdyMessaging {
 
   onNotificationOpened({notification, fromState}) {
     console.log('{onNotificationOpened} event: ', {notification, fromState});
+
+    const action = notification.push_action;
+    const data = notification.data;
+    const pushData = data ? data.push_data : {};
+
+    switch (action) {
+      case 'nav_to_article_detail':
+        NavigationService.navigate('ArticleDetail', {
+          article_id: pushData.article_id,
+          ts: +(new Date),
+          title: data.title,
+          body: data.body,
+        });
+        break;
+      case 'nav_to_hello_world':
+        NavigationService.navigate('HelloWorld', {
+          foo: '123456789',
+          ts: +(new Date),
+        });
+        break;
+      default:
+        console.error('Unhandled push action: ', action)
+    }
   }
 
   onNotificationReceived({notification, fromState}) {

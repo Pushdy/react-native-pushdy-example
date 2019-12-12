@@ -1,9 +1,11 @@
-import HomeScreen from './screens/HomeScreen'
-import HelloWorldScreen from './screens/HelloWorldScreen'
+import Home from './screens/HomeScreen'
+import HelloWorld from './screens/HelloWorldScreen'
+import ArticleDetail from './screens/ArticleDetailScreen'
 
 export default {
   Home: {
-    screen: HomeScreen,
+    screen: Home,
   },
-  HelloWorld: HelloWorldScreen,
+  HelloWorld,
+  ArticleDetail,
 }

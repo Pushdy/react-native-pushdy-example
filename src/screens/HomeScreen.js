@@ -43,15 +43,6 @@ export default class HomeScreen extends React.Component {
               </View>
             )}
             <View style={styles.body}>
-              <View style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>Step One</Text>
-                <Text style={styles.sectionDescription}>
-                  Edit <Text style={styles.highlight}>src/screens/HomeScreen.js</Text> to change this
-                  screen.
-                </Text>
-              </View>
-
-
 
               {/*
               ======== Jump to Hello World Page =======
@@ -75,9 +66,36 @@ export default class HomeScreen extends React.Component {
                   >
                     <View><Text style={{ color: '#333'}}>Go to HelloWorld Screen</Text></View>
                   </TouchableOpacity>
+
+                  <TouchableOpacity
+                    onPress={() => {
+                      NavigationService.navigate('ArticleDetail', {
+                        article_id: 222,
+                        title: 'Example title 222',
+                        body: 'Example body',
+                        ts: +(new Date),
+                      })
+                    }}
+                    style={{
+                      backgroundColor: '#00ccff',
+                      borderRadius: 6,
+                      padding: 10,
+                      marginTop: 20,
+                    }}
+                  >
+                    <View><Text style={{ color: '#333'}}>Go to Article Detail Screen</Text></View>
+                  </TouchableOpacity>
                 </View>
               </View>
 
+
+              <View style={styles.sectionContainer}>
+                <Text style={styles.sectionTitle}>Step One</Text>
+                <Text style={styles.sectionDescription}>
+                  Edit <Text style={styles.highlight}>src/screens/HomeScreen.js</Text> to change this
+                  screen.
+                </Text>
+              </View>
 
 
               <View style={styles.sectionContainer}>
