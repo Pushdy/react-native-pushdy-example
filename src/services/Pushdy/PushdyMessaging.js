@@ -4,7 +4,7 @@
  * This is the development example
  */
 import Pushdy from 'react-native-pushdy'
-import { Platform, Alert } from "react-native";
+import { Platform, Alert, NativeEventEmitter } from "react-native";
 import OpenAppSettings from 'react-native-app-settings';
 
 import ColorLog from '../ColorLog'
@@ -17,17 +17,30 @@ class PushdyMessaging {
     // const [msg, x2num] = await Pushdy.sampleMethod('Hello from JS with', 500);
     // console.log('{register} msg, x2num: ', msg, x2num);
 
+    // Remember to subscribe first
+    const _this = this;
+    Pushdy.startSubscribers({
+      onNotificationOpened: _this.onNotificationOpened.bind(_this),
+      onNotificationReceived: _this.onNotificationReceived.bind(_this),
+      onRemoteNotificationFailedToRegister: _this.onRemoteNotificationFailedToRegister.bind(_this),
+      onRemoteNotificationRegistered: _this.onRemoteNotificationRegistered.bind(_this),
+      onTokenUpdated: _this.onTokenUpdated.bind(_this),
+    });
+
+    // After setting up subscribers, you can continue to work with Pushdy
     Pushdy.getDeviceToken().then((deviceToken) => {
-      console.log('{PushdyMessaging} deviceToken: ', deviceToken);
+      // console.log('{PushdyMessaging} deviceToken: ', deviceToken);
       if (deviceToken) {
-        this.onTokenUpdated(deviceToken);
+        this.handleTokenUpdated(deviceToken);
       } else {
         this.log.info('deviceToken is empty: ', deviceToken);
       }
     });
   }
 
-  unregister() {}
+  unregister() {
+    Pushdy.stopSubscribers();
+  }
 
 
   /**
@@ -86,15 +99,36 @@ class PushdyMessaging {
     );
   }
 
-  onTokenUpdated(deviceToken) {
-    this.debug && this.log.info('{FirebaseMessaging.onTokenUpdated} deviceToken: ', deviceToken);
+  handleTokenUpdated(deviceToken) {
+    this.debug && this.log.info('{onTokenUpdated} deviceToken: ', deviceToken);
 
     if (deviceToken) {
       // Do sth like Save token to localStorage
     } else {
-      this.debug && this.log.info('{FirebaseMessaging.onTokenUpdated} Skip because deviceToken is null', deviceToken);
+      this.debug && this.log.info('{onTokenUpdated} Skip because deviceToken is null', deviceToken);
     }
   }
+
+  /**
+   * @param event Format: {deviceToken}
+   */
+  onTokenUpdated({ deviceToken }) {
+    this.handleTokenUpdated(deviceToken);
+  }
+
+  onNotificationOpened({notification, fromState}) {
+    console.log('{onNotificationOpened} event: ', {notification, fromState});
+  }
+
+  onNotificationReceived({notification, fromState}) {
+    console.log('{onNotificationReceived} event: ', {notification, fromState});
+  }
+
+  onRemoteNotificationFailedToRegister(event) {
+    console.log('{onRemoteNotificationFailedToRegister} event: ', event);
+  }
+
+  onRemoteNotificationRegistered({}) {}
 }
 
 export default new PushdyMessaging();
