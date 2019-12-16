@@ -1,0 +1,4 @@
+<resources>
+    <!-- a secondary color for controls like checkboxes and text fields -->
+    <color name="colorAccent">#e71fff</color>
+</resources>
