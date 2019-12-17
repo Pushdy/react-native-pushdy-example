@@ -10,3 +10,8 @@ We recommend using `src/services/Pushdy/PushdyMessaging.js` as a your Pushdy ser
 This project associate with firebase project `react-native-pushdy-example`
 
 The example project of mobiletech
+
+
+
+# Xcode change logs
+- Change swift version from 5 to 4.2 in Build Setting > Swift Compiler - Language

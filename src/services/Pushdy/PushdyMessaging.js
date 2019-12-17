@@ -20,8 +20,9 @@ class PushdyMessaging {
   log = new ColorLog({}, {prefix: '[PushdyMessaging] '});
 
   async register() {
-    // const [msg, x2num] = await Pushdy.sampleMethod('Hello from JS with', 500);
-    // console.log('{register} msg, x2num: ', msg, x2num);
+    const [msg, x2num] = await Pushdy.sampleMethod('Hello from JS with', 500);
+    console.log('{register} msg, x2num: ', msg, x2num);
+    return;
 
     // Remember to subscribe first
     const _this = this;
@@ -45,6 +46,7 @@ class PushdyMessaging {
   }
 
   unregister() {
+    return;
     Pushdy.stopSubscribers();
   }
 
@@ -56,12 +58,19 @@ class PushdyMessaging {
    * @returns {Promise<void>}
    */
   async ensurePermission(showAccquireOSSettingPopup = false) {
+    return;
+
     const enabled = await Pushdy.isNotificationEnabled();
     if (enabled) {
       // user has permissions
       this.debug && this.log.info('{ensurePermission} user has permissions');
       return true;
     } else {
+      // https://guide.pushdy.com/i/cai-dat-mobile-push/ios#3-cai-dat-sdk-cho-ios-app
+      // The OS dialog was show only once => Case 1 bellow
+      // If user turn push-noti off => case 2 bellow
+      await Pushdy.ios_registerForPushNotifications();
+
       /**
        * Case 1: First time app open => Show a native popup and user can choose Allow / Disallow
        * Case 2: Second open app => OS doesn't support tp show native popup again, so we need to warn user, and let they go to OS Setting to turn on notification

@@ -15,6 +15,7 @@
     "cleanIosDerivation": "rm -rf ~/Library/Developer/Xcode/DerivedData",
     "clean": "yarn cleanBuildAndroid && yarn cleanCache && yarn cleanApp",
     "clear": "yarn cleanBuildAndroid && yarn cleanCache && yarn cleanInstallNodeModule && yarn cleanInstallPod && yarn cleanApp",
+    "copyBackToReactNativePushdy": "cp -rf node_modules/react-native-pushdy/ ../react-native-pushdy",
     "test": "jest",
     "lint": "eslint ."
   },
