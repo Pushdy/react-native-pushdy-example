@@ -12,9 +12,9 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2F5D031166493088924E61E1 /* libPods-reactNativePushdyExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54EBDFE0878CBFDDB2ACF00D /* libPods-reactNativePushdyExampleTests.a */; };
-		581CB4B9BEE783B427FE6B55 /* libPods-reactNativePushdyExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB25E69619BFBC78B713559D /* libPods-reactNativePushdyExample.a */; };
-		D6992FF323A8E15600032277 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6992FF223A8E15600032277 /* File.swift */; };
+		2C0E4FB7294D2EEA6070F1F7 /* Pods_reactNativePushdyExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95825DEE5300AC86F6960BE9 /* Pods_reactNativePushdyExampleTests.framework */; };
+		D6D8C73423A9C45400ADE9C7 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D8C73323A9C45400ADE9C7 /* File.swift */; };
+		D83BC0055ACAECD8D0C285AB /* Pods_reactNativePushdyExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7850AC3D7B62884FC4C11C9E /* Pods_reactNativePushdyExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,15 +43,18 @@
 		305D497D2E41FC647C2CCCEA /* Pods-reactNativePushdyExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativePushdyExampleTests.release.xcconfig"; path = "Target Support Files/Pods-reactNativePushdyExampleTests/Pods-reactNativePushdyExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		34C8B43B963A7E4D0367BB5E /* Pods-reactNativePushdyExample-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativePushdyExample-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-reactNativePushdyExample-tvOSTests/Pods-reactNativePushdyExample-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		512D14FE99AA1415CC39591B /* Pods-reactNativePushdyExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativePushdyExample.release.xcconfig"; path = "Target Support Files/Pods-reactNativePushdyExample/Pods-reactNativePushdyExample.release.xcconfig"; sourceTree = "<group>"; };
-		54EBDFE0878CBFDDB2ACF00D /* libPods-reactNativePushdyExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactNativePushdyExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7850AC3D7B62884FC4C11C9E /* Pods_reactNativePushdyExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reactNativePushdyExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F02ECD1BDE2EDE7745109F1 /* Pods-reactNativePushdyExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativePushdyExample.debug.xcconfig"; path = "Target Support Files/Pods-reactNativePushdyExample/Pods-reactNativePushdyExample.debug.xcconfig"; sourceTree = "<group>"; };
+		95825DEE5300AC86F6960BE9 /* Pods_reactNativePushdyExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reactNativePushdyExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5EEFCA4E5B9AFAB6F4C0CD /* Pods-reactNativePushdyExample-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativePushdyExample-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-reactNativePushdyExample-tvOSTests/Pods-reactNativePushdyExample-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		ACEB7FBD4C8CEEEDB1AC4858 /* Pods-reactNativePushdyExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativePushdyExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-reactNativePushdyExampleTests/Pods-reactNativePushdyExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0E538DA5079654108C7A0E3 /* Pods-reactNativePushdyExample-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativePushdyExample-tvOS.release.xcconfig"; path = "Target Support Files/Pods-reactNativePushdyExample-tvOS/Pods-reactNativePushdyExample-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		BB25E69619BFBC78B713559D /* libPods-reactNativePushdyExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactNativePushdyExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C843AEF3A2752887122C9E63 /* libPods-reactNativePushdyExample-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactNativePushdyExample-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6992FF223A8E15600032277 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		D6992FF423A8E2DF00032277 /* reactNativePushdyExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reactNativePushdyExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		D6D8C73223A9C45400ADE9C7 /* reactNativePushdyExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reactNativePushdyExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		D6D8C73323A9C45400ADE9C7 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = File.swift; path = reactNativePushdyExample/File.swift; sourceTree = "<group>"; };
+		D6D8C76B23AA101700ADE9C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D6D8C76F23AA189400ADE9C7 /* libreact-native-pushdy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-pushdy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6D8C77123AA18AC00ADE9C7 /* libPushdySDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPushdySDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F3DD67972FE1F42BA271B0D3 /* Pods-reactNativePushdyExample-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativePushdyExample-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-reactNativePushdyExample-tvOS/Pods-reactNativePushdyExample-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -62,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F5D031166493088924E61E1 /* libPods-reactNativePushdyExampleTests.a in Frameworks */,
+				2C0E4FB7294D2EEA6070F1F7 /* Pods_reactNativePushdyExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				581CB4B9BEE783B427FE6B55 /* libPods-reactNativePushdyExample.a in Frameworks */,
+				D83BC0055ACAECD8D0C285AB /* Pods_reactNativePushdyExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +107,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				D6D8C73323A9C45400ADE9C7 /* File.swift */,
+				D6D8C73223A9C45400ADE9C7 /* reactNativePushdyExample-Bridging-Header.h */,
 			);
 			name = reactNativePushdyExample;
 			sourceTree = "<group>";
@@ -111,12 +116,15 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6D8C77123AA18AC00ADE9C7 /* libPushdySDK.a */,
+				D6D8C76F23AA189400ADE9C7 /* libreact-native-pushdy.a */,
+				D6D8C76B23AA101700ADE9C7 /* UIKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				BB25E69619BFBC78B713559D /* libPods-reactNativePushdyExample.a */,
 				C843AEF3A2752887122C9E63 /* libPods-reactNativePushdyExample-tvOS.a */,
 				270522E4F3776973A2ABFBE8 /* libPods-reactNativePushdyExample-tvOSTests.a */,
-				54EBDFE0878CBFDDB2ACF00D /* libPods-reactNativePushdyExampleTests.a */,
+				7850AC3D7B62884FC4C11C9E /* Pods_reactNativePushdyExample.framework */,
+				95825DEE5300AC86F6960BE9 /* Pods_reactNativePushdyExampleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,8 +139,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				D6992FF423A8E2DF00032277 /* reactNativePushdyExample-Bridging-Header.h */,
-				D6992FF223A8E15600032277 /* File.swift */,
 				13B07FAE1A68108700A75B9A /* reactNativePushdyExample */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* reactNativePushdyExampleTests */,
@@ -201,7 +207,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				2F43BE4BE84AAB8BE915AA98 /* [CP] Copy Pods Resources */,
+				D120B7315A4B5BDF88F664DB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -286,24 +292,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		2F43BE4BE84AAB8BE915AA98 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-reactNativePushdyExample/Pods-reactNativePushdyExample-resources.sh",
-				"${PODS_ROOT}/PushdySDK/Pushdy/Classes/Views/PDYNotificationView.xib",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PDYNotificationView.nib",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-reactNativePushdyExample/Pods-reactNativePushdyExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A999F4B6375286B08E3D5FEC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,6 +336,78 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D120B7315A4B5BDF88F664DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-reactNativePushdyExample/Pods-reactNativePushdyExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DoubleConversion/DoubleConversion.framework",
+				"${BUILT_PRODUCTS_DIR}/FBReactNativeSpec/FBReactNativeSpec.framework",
+				"${BUILT_PRODUCTS_DIR}/Folly/folly.framework",
+				"${BUILT_PRODUCTS_DIR}/PushdySDK/PushdySDK.framework",
+				"${BUILT_PRODUCTS_DIR}/RCTTypeSafety/RCTTypeSafety.framework",
+				"${BUILT_PRODUCTS_DIR}/RNGestureHandler/RNGestureHandler.framework",
+				"${BUILT_PRODUCTS_DIR}/RNOpenAppSettings/RNOpenAppSettings.framework",
+				"${BUILT_PRODUCTS_DIR}/RNReanimated/RNReanimated.framework",
+				"${BUILT_PRODUCTS_DIR}/RNScreens/RNScreens.framework",
+				"${BUILT_PRODUCTS_DIR}/React-Core/React.framework",
+				"${BUILT_PRODUCTS_DIR}/React-CoreModules/CoreModules.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTActionSheet/RCTActionSheet.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTAnimation/RCTAnimation.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTBlob/RCTBlob.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTImage/RCTImage.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTLinking/RCTLinking.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTNetwork/RCTNetwork.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTSettings/RCTSettings.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTText/RCTText.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTVibration/RCTVibration.framework",
+				"${BUILT_PRODUCTS_DIR}/React-cxxreact/cxxreact.framework",
+				"${BUILT_PRODUCTS_DIR}/React-jsi/jsi.framework",
+				"${BUILT_PRODUCTS_DIR}/React-jsiexecutor/jsireact.framework",
+				"${BUILT_PRODUCTS_DIR}/React-jsinspector/jsinspector.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactCommon/ReactCommon.framework",
+				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
+				"${BUILT_PRODUCTS_DIR}/glog/glog.framework",
+				"${BUILT_PRODUCTS_DIR}/react-native-pushdy/react_native_pushdy.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoubleConversion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBReactNativeSpec.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/folly.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PushdySDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTTypeSafety.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNGestureHandler.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNOpenAppSettings.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNReanimated.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNScreens.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreModules.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTActionSheet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTAnimation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTBlob.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTLinking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTNetwork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTSettings.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTText.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTVibration.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/cxxreact.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/jsi.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/jsireact.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/jsinspector.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactCommon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/react_native_pushdy.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-reactNativePushdyExample/Pods-reactNativePushdyExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -383,7 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				D6992FF323A8E15600032277 /* File.swift in Sources */,
+				D6D8C73423A9C45400ADE9C7 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

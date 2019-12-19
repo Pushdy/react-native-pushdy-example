@@ -1,7 +1,10 @@
 platform :ios, '9.0'
+
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 target 'reactNativePushdyExample' do
+  use_frameworks!
+  
   # Pods for reactNativePushdyExample
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
@@ -33,6 +36,10 @@ target 'reactNativePushdyExample' do
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+  
+  # react-native-cli will auto link Pod in node_modules into Pods > Development Pods
+  # UnComment this pod make pod show up in Pods > Pods
+  # pod 'react-native-pushdy', :podspec => '../node_modules/react-native-pushdy/react-native-pushdy.podspec'
 
 
   target 'reactNativePushdyExampleTests' do

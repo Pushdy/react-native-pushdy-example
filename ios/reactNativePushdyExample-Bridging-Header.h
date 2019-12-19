@@ -9,7 +9,5 @@
 #ifndef reactNativePushdyExample_Bridging_Header_h
 #define reactNativePushdyExample_Bridging_Header_h
 
-#import <PushdySDK/PushdySDK-Swift.h>
-
 #endif /* reactNativePushdyExample_Bridging_Header_h */
 

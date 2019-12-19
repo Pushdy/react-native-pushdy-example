@@ -350,7 +350,7 @@ SPEC CHECKSUMS:
   React-jsi: cb2cd74d7ccf4cffb071a46833613edc79cdf8f7
   React-jsiexecutor: d5525f9ed5f782fdbacb64b9b01a43a9323d2386
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
-  react-native-pushdy: 39bc8fcccdcf76b9c8c28e3180a485a0324b2485
+  react-native-pushdy: cbb857aa3f949ac31ce6cacf1dabfee1dc2a6e3c
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
   React-RCTBlob: d89293cc0236d9cb0933d85e430b0bbe81ad1d72
@@ -367,6 +367,6 @@ SPEC CHECKSUMS:
   RNScreens: f28b48b8345f2f5f39ed6195518291515032a788
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: 99fa258795dba8a9e0611507aa9fc97d0b994b8b
+PODFILE CHECKSUM: afd86c5be6e6ab66e209ab704ad08e4c6c48bdb7
 
 COCOAPODS: 1.8.4
