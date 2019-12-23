@@ -10,9 +10,13 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import <PushdySDK/PushdySDK-Swift.h>
+
+//#import <PushdySDK/PushdySDK-Swift.h> // Included in .h
+#import <react_native_pushdy/react_native_pushdy-Swift.h>
+
 
 @implementation AppDelegate
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -31,9 +35,11 @@
   
   // Add Pushdy module
   NSString *clientKey = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTQ0NTMyNTU5NiIsImFwcF9pZCI6InJlYWN0X25hdGl2ZV9wdXNoZHlfZXhhbXBsZSIsImlhdCI6MTU3NTU0MDM0NX0.Dt81jYANo4QzV_q8JhZxfSTzq44SivUa-yCwPteyCiE";
-  [Pushdy initWithClientKey:clientKey delegate:self launchOptions:launchOptions];
-
-
+//   [Pushdy initWithClientKey:clientKey delegate:self launchOptions:launchOptions];
+  NSInteger a = 6789;
+  [RNPushdy sayHello:clientKey numberArgument:a];
+  [RNPushdy initWithClientKey:clientKey delegate:self launchOptions:launchOptions];
+  
   return YES;
 }
 
@@ -44,6 +50,25 @@
 #else
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
+}
+
+// =========== TODO: Change PushdySDK to support onNotificationReceived() handling in RNPushdy instead of right here ==========
+-(void)onNotificationReceived:(NSDictionary<NSString *,id> *)notification
+fromState:(NSString *)fromState {
+  NSLog(@"Received notification from state: %@", fromState);
+  
+  RNPushdy *rnPushdy = [RNPushdy getInstance];
+  NSLog(@"rnPushdy: %@", rnPushdy);
+  [rnPushdy onNotificationOpened:notification fromState:fromState];
+  // [[RNPushdy getInstance] onNotificationReceived:notification fromState:fromState];
+}
+
+-(void)onNotificationOpened:(NSDictionary<NSString *,id> *)notification
+fromState:(NSString *)fromState {
+  NSLog(@"Opened notification from state: %@", fromState);
+
+  RNPushdy *rnPushdy = [RNPushdy getInstance];
+  [rnPushdy onNotificationOpened:notification fromState:fromState];
 }
 
 @end

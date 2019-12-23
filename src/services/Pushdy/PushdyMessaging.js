@@ -1,7 +1,9 @@
 /**
- * Pushdy Messaging module
+ * Pushdy Messaging module for this example app
  *
  * This is the development example
+ * You can use this file as Pushdy wrapper service for you app
+ * Replace NavigationService by your navigation service
  */
 import Pushdy from 'react-native-pushdy'
 import { Platform, Alert, NativeEventEmitter } from "react-native";
@@ -20,9 +22,17 @@ class PushdyMessaging {
   log = new ColorLog({}, {prefix: '[PushdyMessaging] '});
 
   async register() {
+    /**
+     * See more at: https://pushdy_document
+     */
+    Pushdy.setTimeout(5000);
+
     const [msg, x2num] = await Pushdy.sampleMethod('Hello from JS with', 500);
     console.log('{register} msg, x2num: ', msg, x2num);
-    return;
+
+    if (Platform.OS === 'ios') {
+      await Pushdy.ios_registerForPushNotification();
+    }
 
     // Remember to subscribe first
     const _this = this;
@@ -46,7 +56,6 @@ class PushdyMessaging {
   }
 
   unregister() {
-    return;
     Pushdy.stopSubscribers();
   }
 
@@ -131,9 +140,32 @@ class PushdyMessaging {
     this.handleTokenUpdated(deviceToken);
   }
 
+  /**
+   * Notification was opened from
+   * @param notification
+   * @param fromState
+   */
   onNotificationOpened({notification, fromState}) {
     console.log('{onNotificationOpened} event: ', {notification, fromState});
 
+    this.handleMyAppPushAction(notification, fromState);
+  }
+
+  onNotificationReceived({notification, fromState}) {
+    console.log('{onNotificationReceived} event: ', {notification, fromState});
+  }
+
+  onRemoteNotificationFailedToRegister(event) {
+    console.log('{onRemoteNotificationFailedToRegister} event: ', event);
+  }
+
+  onRemoteNotificationRegistered({}) {}
+
+
+  /**
+   * ======== App specific behavior ========
+   */
+  handleMyAppPushAction(notification, fromState) {
     const action = notification.push_action;
     const data = notification.data;
     const pushData = data ? data.push_data : {};
@@ -157,16 +189,6 @@ class PushdyMessaging {
         console.error('Unhandled push action: ', action)
     }
   }
-
-  onNotificationReceived({notification, fromState}) {
-    console.log('{onNotificationReceived} event: ', {notification, fromState});
-  }
-
-  onRemoteNotificationFailedToRegister(event) {
-    console.log('{onRemoteNotificationFailedToRegister} event: ', event);
-  }
-
-  onRemoteNotificationRegistered({}) {}
 }
 
 export default new PushdyMessaging();

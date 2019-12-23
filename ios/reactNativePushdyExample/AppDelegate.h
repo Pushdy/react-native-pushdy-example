@@ -7,8 +7,9 @@
 
 #import <React/RCTBridgeDelegate.h>
 #import <UIKit/UIKit.h>
+#import <PushdySDK/PushdySDK-Swift.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, RCTBridgeDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, RCTBridgeDelegate, PushdyDelegate>
 
 @property (nonatomic, strong) UIWindow *window;
 
