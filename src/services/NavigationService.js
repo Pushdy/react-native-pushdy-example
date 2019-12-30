@@ -8,6 +8,14 @@ import { NavigationActions, StackActions } from 'react-navigation';
 
 let _navigator;
 
+const MAX_RETRY_ALLOWED = 10;
+const RETRY_INTERVAL = 300;
+
+/**
+ * App navigation service is initializing or haven't ready yet
+ *
+ * @returns {boolean}
+ */
 function isReady() {
   return !!_navigator;
 }
@@ -16,7 +24,17 @@ function setTopLevelNavigator(navigatorRef) {
   _navigator = navigatorRef;
 }
 
-function navigate(routeName, params, option = {}) {
+/**
+ * Try to navigate to route
+ * If navigator was not ready then retry
+ * Considering failed after 5 times unsuccessfully
+ *
+ * @param routeName
+ * @param params
+ * @param option
+ * @param retry how many failed and retry
+ */
+function navigate(routeName, params, option = {}, retry = 0) {
   const opt = {
     routeName: routeName,
     params: params,
@@ -26,12 +44,25 @@ function navigate(routeName, params, option = {}) {
     opt.key = +(new Date); // force create new stack
   }
 
-  try {
-    _navigator.dispatch(NavigationActions.navigate(opt));
-  } catch (e) {
-    console.log('{NavigationService.navigate} e: ', e);
-    if (option.onFailed) {
-      option.onFailed(e);
+  if (isReady()) {
+    try {
+      _navigator.dispatch(NavigationActions.navigate(opt));
+    } catch (e) {
+      console.log('{NavigationService.navigate} e: ', e);
+      if (option.onFailed) {
+        option.onFailed(e);
+      }
+    }
+  }
+  else {
+    if (retry < MAX_RETRY_ALLOWED) {
+      // retry after 300ms
+      console.warn('{NavigationService.navigate} navigate ' + routeName + ' retry ' + retry + ' times')
+      setTimeout(() => {
+        navigate(routeName, params, option, retry + 1)
+      }, RETRY_INTERVAL);
+    } else {
+      console.warn('{NavigationService.navigate} navigate ' + routeName + ' failed after retry ' + retry + ' times')
     }
   }
 }

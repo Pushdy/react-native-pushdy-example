@@ -30,9 +30,6 @@ class PushdyMessaging {
     const [msg, x2num] = await Pushdy.sampleMethod('Hello from JS with', 500);
     this.debug && this.log.debug('{register} msg, x2num: ', msg, x2num);
 
-    // You must ensure permission before you can receive push
-    // await Pushdy.ios_registerForPushNotification()
-    await this.ensurePermission();
 
     // Remember to subscribe first
     const _this = this;
@@ -43,6 +40,10 @@ class PushdyMessaging {
       onRemoteNotificationRegistered: _this.onRemoteNotificationRegistered.bind(_this),
       onTokenUpdated: _this.onTokenUpdated.bind(_this),
     });
+
+    // You must ensure permission before you can receive push
+    // await Pushdy.ios_registerForPushNotification()
+    await this.ensurePermission();
 
     // After setting up subscribers, you can continue to work with Pushdy
     Pushdy.getDeviceToken().then((deviceToken) => {
@@ -86,12 +87,12 @@ class PushdyMessaging {
        * Case 2: Second open app => OS doesn't support tp show native popup again, so we need to warn user, and let they go to OS Setting to turn on notification
        */
       // user doesn't have permission
-      setTimeout(() => {
-        // Show non-blocking request
-        if (showAccquireOSSettingPopup) {
+      if (showAccquireOSSettingPopup) {
+        setTimeout(() => {
+          // Show non-blocking request
           this.showRequestOsSettingPermissionPopup();
-        }
-      }, 0);
+        }, 0);
+      }
 
       return false;
     }
@@ -152,8 +153,11 @@ class PushdyMessaging {
   }
 
   /**
+   * Handle notification received in foreground
+   *  - In case of enablePushdyInAppBanner(true): PushdySDK already have implemented a default app banner
+   *  - In case of enablePushdyInAppBanner(false): TODO: Check this case
+   *
    * You can handle and show your in-app banner here
-   * If not, PushdySDK for ios already have implemented a default app banner
    *
    * @param {PushdyNotification} notification
    * @param {String} fromState
@@ -166,7 +170,9 @@ class PushdyMessaging {
     this.debug && this.log.info('{onRemoteNotificationFailedToRegister} event: ', event);
   }
 
-  onRemoteNotificationRegistered({}) {}
+  onRemoteNotificationRegistered(event) {
+    this.debug && this.log.info('{onRemoteNotificationRegistered} event: ', event);
+  }
 
   /**
    * When your app is in closed state (not background), incomming notification message will be handled and show by OS, you can find it in the OS's notification center
@@ -180,7 +186,7 @@ class PushdyMessaging {
   async handleInitialNotification() {
     // Get the clicked push notification while app is closed
     const pendingNotification = await Pushdy.getPendingNotification();
-    // this.debug && this.log.info('{handleInitialNotification} pendingNotification: ', pendingNotification);
+    this.debug && this.log.info('{handleInitialNotification} pendingNotification: ', pendingNotification);
 
     if (pendingNotification) {
       this.handleMyAppPushAction(pendingNotification, "closed");
