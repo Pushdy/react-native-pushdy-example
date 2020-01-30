@@ -14,9 +14,7 @@ import PushdyMessaging from './src/services/Pushdy/PushdyMessaging';
 
 export default class App extends React.Component {
   componentDidMount() {
-    PushdyMessaging.ensurePermission().then(() => {
-      PushdyMessaging.register();
-    });
+    PushdyMessaging.register();
   }
 
   componentWillUnmount() {

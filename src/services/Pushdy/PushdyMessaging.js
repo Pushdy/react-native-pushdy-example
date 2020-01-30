@@ -42,18 +42,17 @@ class PushdyMessaging {
     });
 
     // You must ensure permission before you can receive push
-    // await Pushdy.ios_registerForPushNotification()
-    await this.ensurePermission();
-
-    // After setting up subscribers, you can continue to work with Pushdy
-    Pushdy.getDeviceToken().then((deviceToken) => {
-      if (deviceToken) {
-        this.handleTokenUpdated(deviceToken);
-      } else {
-        this.log.info('deviceToken is empty: ', deviceToken);
-      }
+    this.ensurePermission().then(enabled => {
+      Pushdy.getDeviceToken().then((deviceToken) => {
+        if (deviceToken) {
+          this.handleTokenUpdated(deviceToken);
+        } else {
+          this.log.info('deviceToken is empty: ', deviceToken);
+        }
+      });
     });
 
+    // After setting up subscribers, you can continue to work with Pushdy
     this.handleInitialNotification();
   }
 
