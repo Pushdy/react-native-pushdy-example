@@ -13,6 +13,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2C0E4FB7294D2EEA6070F1F7 /* Pods_reactNativePushdyExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95825DEE5300AC86F6960BE9 /* Pods_reactNativePushdyExampleTests.framework */; };
+		D69ADD0823E2C792003F92C5 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ADD0723E2C792003F92C5 /* NotificationService.m */; };
+		D69ADD0C23E2C792003F92C5 /* rich-push-notitication.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D69ADD0423E2C792003F92C5 /* rich-push-notitication.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D83BC0055ACAECD8D0C285AB /* Pods_reactNativePushdyExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7850AC3D7B62884FC4C11C9E /* Pods_reactNativePushdyExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +26,28 @@
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = reactNativePushdyExample;
 		};
+		D69ADD0A23E2C792003F92C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D69ADD0323E2C792003F92C5;
+			remoteInfo = "rich-push-notitication";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D69ADCFC23E2C675003F92C5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D69ADD0C23E2C792003F92C5 /* rich-push-notitication.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -49,6 +72,10 @@
 		ACEB7FBD4C8CEEEDB1AC4858 /* Pods-reactNativePushdyExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativePushdyExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-reactNativePushdyExampleTests/Pods-reactNativePushdyExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0E538DA5079654108C7A0E3 /* Pods-reactNativePushdyExample-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativePushdyExample-tvOS.release.xcconfig"; path = "Target Support Files/Pods-reactNativePushdyExample-tvOS/Pods-reactNativePushdyExample-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		C843AEF3A2752887122C9E63 /* libPods-reactNativePushdyExample-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactNativePushdyExample-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D69ADD0423E2C792003F92C5 /* rich-push-notitication.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "rich-push-notitication.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D69ADD0623E2C792003F92C5 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		D69ADD0723E2C792003F92C5 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		D69ADD0923E2C792003F92C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6D8C73223A9C45400ADE9C7 /* reactNativePushdyExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reactNativePushdyExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		D6D8C76B23AA101700ADE9C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D6D8C76F23AA189400ADE9C7 /* libreact-native-pushdy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-pushdy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +100,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D83BC0055ACAECD8D0C285AB /* Pods_reactNativePushdyExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D69ADD0123E2C792003F92C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +175,7 @@
 				13B07FAE1A68108700A75B9A /* reactNativePushdyExample */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* reactNativePushdyExampleTests */,
+				D69ADD0523E2C792003F92C5 /* rich-push-notitication */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				A20AAA74B24DA1B9BFF2E7CB /* Pods */,
@@ -155,6 +190,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* reactNativePushdyExample.app */,
 				00E356EE1AD99517003FC87E /* reactNativePushdyExampleTests.xctest */,
+				D69ADD0423E2C792003F92C5 /* rich-push-notitication.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,6 +208,16 @@
 				305D497D2E41FC647C2CCCEA /* Pods-reactNativePushdyExampleTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D69ADD0523E2C792003F92C5 /* rich-push-notitication */ = {
+			isa = PBXGroup;
+			children = (
+				D69ADD0623E2C792003F92C5 /* NotificationService.h */,
+				D69ADD0723E2C792003F92C5 /* NotificationService.m */,
+				D69ADD0923E2C792003F92C5 /* Info.plist */,
+			);
+			path = "rich-push-notitication";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,15 +253,34 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				D120B7315A4B5BDF88F664DB /* [CP] Embed Pods Frameworks */,
+				D69ADCFC23E2C675003F92C5 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D69ADD0B23E2C792003F92C5 /* PBXTargetDependency */,
 			);
 			name = reactNativePushdyExample;
 			productName = reactNativePushdyExample;
 			productReference = 13B07F961A680F5B00A75B9A /* reactNativePushdyExample.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D69ADD0323E2C792003F92C5 /* rich-push-notitication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D69ADD0D23E2C793003F92C5 /* Build configuration list for PBXNativeTarget "rich-push-notitication" */;
+			buildPhases = (
+				D69ADD0023E2C792003F92C5 /* Sources */,
+				D69ADD0123E2C792003F92C5 /* Frameworks */,
+				D69ADD0223E2C792003F92C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "rich-push-notitication";
+			productName = "rich-push-notitication";
+			productReference = D69ADD0423E2C792003F92C5 /* rich-push-notitication.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -240,6 +305,11 @@
 							};
 						};
 					};
+					D69ADD0323E2C792003F92C5 = {
+						CreatedOnToolsVersion = 11.3;
+						DevelopmentTeam = SBRTA36BL6;
+						ProvisioningStyle = Manual;
+					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "reactNativePushdyExample" */;
@@ -258,6 +328,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* reactNativePushdyExample */,
 				00E356ED1AD99517003FC87E /* reactNativePushdyExampleTests */,
+				D69ADD0323E2C792003F92C5 /* rich-push-notitication */,
 			);
 		};
 /* End PBXProject section */
@@ -276,6 +347,13 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D69ADD0223E2C792003F92C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +529,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D69ADD0023E2C792003F92C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D69ADD0823E2C792003F92C5 /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -458,6 +544,11 @@
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* reactNativePushdyExample */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+		D69ADD0B23E2C792003F92C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D69ADD0323E2C792003F92C5 /* rich-push-notitication */;
+			targetProxy = D69ADD0A23E2C792003F92C5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -679,6 +770,61 @@
 			};
 			name = Release;
 		};
+		D69ADD0E23E2C793003F92C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kien Vu (TWZZY56UZS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kien Vu (TWZZY56UZS)";
+				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = SBRTA36BL6;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "rich-push-notitication/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.reactNativePushdyExample.rich-push-notitication";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "ReactNativePushdyExample.rich-push-notitication_de";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D69ADD0F23E2C793003F92C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: 24H ONLINE ADVERTISING JOINT STOCK COMPANY (SBRTA36BL6)";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = SBRTA36BL6;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "rich-push-notitication/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.reactNativePushdyExample.rich-push-notitication";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "ReactNativePushdyExample.rich-push-notitication_de";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -705,6 +851,15 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D69ADD0D23E2C793003F92C5 /* Build configuration list for PBXNativeTarget "rich-push-notitication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D69ADD0E23E2C793003F92C5 /* Debug */,
+				D69ADD0F23E2C793003F92C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
