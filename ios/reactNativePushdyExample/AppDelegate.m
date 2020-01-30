@@ -52,17 +52,5 @@
 #endif
 }
 
-// =========== TODO: Change PushdySDK to support onNotificationReceived() handling in RNPushdy instead of right here ==========
--(void)onNotificationReceived:(NSDictionary<NSString *,id> *)notification
-fromState:(NSString *)fromState {
-  NSLog(@"Received notification from state: %@", fromState);
-  [[RNPushdy getInstance] onNotificationReceived:notification fromState:fromState];
-}
-
--(void)onNotificationOpened:(NSDictionary<NSString *,id> *)notification
-fromState:(NSString *)fromState {
-  NSLog(@"Opened notification from state: %@", fromState);
-  [[RNPushdy getInstance] onNotificationOpened:notification fromState:fromState];
-}
 
 @end
