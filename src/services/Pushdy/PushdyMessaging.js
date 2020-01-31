@@ -72,6 +72,16 @@ class PushdyMessaging {
     if (enabled) {
       // user has permissions
       this.debug && this.log.info('{ensurePermission} user has permissions');
+
+      /**
+       * If user allowed, you still need to call this to register UNUserNotificationCenter delegation
+       * Otherwise, you still receive push in bg but not fg, you cannot handle push click action
+       * Android was registered by default so you don't need to register for android
+       */
+      if (Platform.OS === 'ios') {
+        await Pushdy.ios_registerForPushNotification();
+      }
+
       return true;
     } else {
       // https://guide.pushdy.com/i/cai-dat-mobile-push/ios#3-cai-dat-sdk-cho-ios-app
