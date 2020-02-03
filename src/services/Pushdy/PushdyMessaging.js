@@ -32,6 +32,7 @@ class PushdyMessaging {
 
 
     // Remember to subscribe first
+    // On android: You must call this fn, at least with no params: Pushdy.startSubscribers();
     const _this = this;
     Pushdy.startSubscribers({
       onNotificationOpened: _this.onNotificationOpened.bind(_this),
