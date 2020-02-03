@@ -73,24 +73,9 @@ class PushdyMessaging {
     if (enabled) {
       // user has permissions
       this.debug && this.log.info('{ensurePermission} user has permissions');
-
-      /**
-       * If user allowed, you still need to call this to register UNUserNotificationCenter delegation
-       * Otherwise, you still receive push in bg but not fg, you cannot handle push click action
-       * Android was registered by default so you don't need to register for android
-       */
-      if (Platform.OS === 'ios') {
-        await Pushdy.ios_registerForPushNotification();
-      }
-
       return true;
     } else {
-      // https://guide.pushdy.com/i/cai-dat-mobile-push/ios#3-cai-dat-sdk-cho-ios-app
-      // The OS dialog was show only once => Case 1 bellow
-      // If user turn push-noti off => case 2 bellow
-      if (Platform.OS === 'ios') {
-        await Pushdy.ios_registerForPushNotification();
-      }
+      this.debug && this.log.info('{ensurePermission} user does not have permissions');
 
       /**
        * Case 1: First time app open => Show a native popup and user can choose Allow / Disallow
