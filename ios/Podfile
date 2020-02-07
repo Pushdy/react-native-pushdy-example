@@ -49,3 +49,11 @@ target 'reactNativePushdyExample' do
 
   use_native_modules!
 end
+
+
+#
+# Fix: target has transitive dependencies that include statically linked binaries:
+#
+pre_install do |installer|
+  Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
+end

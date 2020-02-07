@@ -20,6 +20,9 @@ import {
 
 import NavigationService from '../services/NavigationService'
 
+import RNZalo from 'rn-zalo';
+
+
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -58,11 +61,7 @@ export default class HomeScreen extends React.Component {
                         ts: +(new Date),
                       })
                     }}
-                    style={{
-                      backgroundColor: '#00ccff',
-                      borderRadius: 6,
-                      padding: 10,
-                    }}
+                    style={styles.btn}
                   >
                     <View><Text style={{ color: '#333'}}>Go to HelloWorld Screen</Text></View>
                   </TouchableOpacity>
@@ -76,14 +75,18 @@ export default class HomeScreen extends React.Component {
                         ts: +(new Date),
                       })
                     }}
-                    style={{
-                      backgroundColor: '#00ccff',
-                      borderRadius: 6,
-                      padding: 10,
-                      marginTop: 20,
-                    }}
+                    style={[styles.btn, {marginTop: 20,}]}
                   >
                     <View><Text style={{ color: '#333'}}>Go to Article Detail Screen</Text></View>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.loginZalo()
+                    }}
+                    style={[styles.btn, {marginTop: 20,}]}
+                  >
+                    <View><Text style={{ color: '#333'}}>Login by Zalo</Text></View>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -123,6 +126,15 @@ export default class HomeScreen extends React.Component {
       </>
     );
   }
+
+  loginZalo = async () => {
+    try {
+      const data = await RNZalo.login();
+      console.log('{loginZalo} data: ', data);
+    } catch (e) {
+      console.log('{loginZalo} e:', e);
+    }
+  };
 }
 
 const styles = StyleSheet.create({
@@ -161,5 +173,10 @@ const styles = StyleSheet.create({
     padding: 4,
     paddingRight: 12,
     textAlign: 'right',
+  },
+  btn: {
+    backgroundColor: '#00ccff',
+    borderRadius: 6,
+    padding: 10,
   },
 });

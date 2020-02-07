@@ -15,6 +15,9 @@
 #import <react_native_pushdy/react_native_pushdy-Swift.h>
 
 
+#import <ZaloSDK/ZaloSDK.h>
+
+
 @implementation AppDelegate
 
 
@@ -39,6 +42,8 @@
   // NSInteger a = 6789;
   // [RNPushdy sayHello:clientKey numberArgument:a];
   [RNPushdy initWithClientKey:clientKey delegate:self launchOptions:launchOptions];
+
+  [[ZaloSDK sharedInstance] initializeWithAppId:@"1792875978274453724"];
   
   return YES;
 }
