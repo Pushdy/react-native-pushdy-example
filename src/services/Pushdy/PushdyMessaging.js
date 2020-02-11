@@ -28,7 +28,8 @@ class PushdyMessaging {
     Pushdy.setTimeout(20000);
 
     // Pushdy.setDeviceId('1234567890');
-    Pushdy.initPushdy({
+    await Pushdy.initPushdy({
+      clientKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTQ0NTMyNTU5NiIsImFwcF9pZCI6InJlYWN0X25hdGl2ZV9wdXNoZHlfZXhhbXBsZSIsImlhdCI6MTU3NTU0MDM0NX0.Dt81jYANo4QzV_q8JhZxfSTzq44SivUa-yCwPteyCiE",
       // deviceId: '123456789_',
     });
 
