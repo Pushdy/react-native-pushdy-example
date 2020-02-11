@@ -25,7 +25,12 @@ class PushdyMessaging {
     /**
      * See more at: https://pushdy_document
      */
-    Pushdy.setTimeout(5000);
+    Pushdy.setTimeout(20000);
+
+    // Pushdy.setDeviceId('1234567890');
+    Pushdy.initPushdy({
+      // deviceId: '123456789_',
+    });
 
     const [msg, x2num] = await Pushdy.sampleMethod('Hello from JS with', 500);
     this.debug && this.log.debug('{register} msg, x2num: ', msg, x2num);

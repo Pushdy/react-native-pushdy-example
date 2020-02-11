@@ -1,5 +1,6 @@
 package com.reactnativepushdyexample;
 
+import android.content.Intent;
 import com.facebook.react.ReactActivity;
 
 import com.facebook.react.ReactActivityDelegate;
@@ -25,5 +26,11 @@ public class MainActivity extends ReactActivity {
        return new RNGestureHandlerEnabledRootView(MainActivity.this);
       }
     };
+  }
+
+  @Override
+  public void onNewIntent(Intent intent) {
+    setIntent(intent);
+    super.onNewIntent(intent);
   }
 }
