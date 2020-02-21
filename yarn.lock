@@ -5305,7 +5305,7 @@ react-native-gesture-handler@^1.5.2:
     prop-types "^15.7.2"
 
 "react-native-pushdy@file:../react-native-pushdy":
-  version "0.0.5"
+  version "0.0.10"
 
 react-native-reanimated@^1.4.0:
   version "1.4.0"

@@ -27,16 +27,14 @@ class PushdyMessaging {
      */
     Pushdy.setTimeout(20000);
 
-    // Pushdy.setDeviceId('1234567890');
-    Pushdy.initPushdy({
-      // deviceId: '123456789_',
-    });
-
     const [msg, x2num] = await Pushdy.sampleMethod('Hello from JS with', 500);
     this.debug && this.log.debug('{register} msg, x2num: ', msg, x2num);
 
 
-    // Remember to subscribe first
+    // Init Pushdy first
+    await Pushdy.initPushdy({ deviceId: 'THIS_USER_DEVICE_UID' });
+
+    // After pushdy initialization
     // On android: You must call this fn, at least with no params: Pushdy.startSubscribers();
     const _this = this;
     Pushdy.startSubscribers({

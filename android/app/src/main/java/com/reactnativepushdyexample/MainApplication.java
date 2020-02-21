@@ -49,7 +49,7 @@ public class MainApplication extends Application implements ReactApplication {
 
     // Pushdy init
     String pushdyClientKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTQ0NTMyNTU5NiIsImFwcF9pZCI6InJlYWN0X25hdGl2ZV9wdXNoZHlfZXhhbXBsZSIsImlhdCI6MTU3NTU0MDM0NX0.Dt81jYANo4QzV_q8JhZxfSTzq44SivUa-yCwPteyCiE";
-    PushdySdk.getInstance().initWithContext(pushdyClientKey, this, R.mipmap.ic_notification);
+    PushdySdk.getInstance().registerSdk(pushdyClientKey, this, R.mipmap.ic_notification);
   }
 
   /**

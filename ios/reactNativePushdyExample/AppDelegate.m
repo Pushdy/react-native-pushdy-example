@@ -38,7 +38,7 @@
   // [Pushdy initWithClientKey:clientKey delegate:self launchOptions:launchOptions];
   // NSInteger a = 6789;
   // [RNPushdy sayHello:clientKey numberArgument:a];
-  [RNPushdy initWithClientKey:clientKey delegate:self launchOptions:launchOptions];
+  [RNPushdy registerSdk:clientKey delegate:self launchOptions:launchOptions];
   
   return YES;
 }
