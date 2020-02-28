@@ -23,6 +23,10 @@ export default class App extends React.Component {
       // Test FirebaseAnalytics
       setTimeout(() => {
         FirebaseAnalytics.trackEvent('luatnd_test_firebase_analytics', { ok: true, ts: Date.now() })
+
+        setInterval(() => {
+          FirebaseAnalytics.trackEvent('luatnd_test_firebase_analytics', { ok: true, ts: Date.now() })
+        }, 15000);
       }, 3000);
     });
   }
