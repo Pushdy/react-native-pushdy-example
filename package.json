@@ -29,7 +29,7 @@
     "react-native": "0.61.5",
     "react-native-app-settings": "^2.0.1",
     "react-native-gesture-handler": "^1.5.2",
-    "react-native-pushdy": "file:../react-native-pushdy",
+    "react-native-pushdy": "^0.0.11",
     "react-native-reanimated": "^1.4.0",
     "react-native-screens": "^1.0.0-alpha.23",
     "react-navigation": "^4.0.10",
