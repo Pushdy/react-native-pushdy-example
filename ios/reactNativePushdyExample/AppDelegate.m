@@ -14,12 +14,20 @@
 //#import <PushdySDK/PushdySDK-Swift.h> // Included in .h
 #import <react_native_pushdy/react_native_pushdy-Swift.h>
 
+#import <Firebase.h>
+
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  // --- firebase
+  if ([FIRApp defaultApp] == nil) {
+    [FIRApp configure];
+  }
+  
+  
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"reactNativePushdyExample"

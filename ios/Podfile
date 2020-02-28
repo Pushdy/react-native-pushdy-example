@@ -49,3 +49,34 @@ target 'reactNativePushdyExample' do
 
   use_native_modules!
 end
+
+#
+# Fix: target has transitive dependencies that include statically linked binaries:
+#
+pre_install do |installer|
+  Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    #
+    # Cannot build with rnfirebase@6
+    # https://github.com/invertase/react-native-firebase/issues/3024
+    #
+    if ['RNFBApp', 'RNFBMessaging' ].include?(target.name)
+      target.add_system_framework(installer.pods_project.targets.find{|target| target.name == 'GoogleUtilities'})
+#    elsif ['RNFBCrashlytics'].include?(target.name)
+#      target.add_system_framework(installer.pods_project.targets.find{|target| target.name == 'Fabric'})
+#      target.add_system_framework(installer.pods_project.targets.find{|target| target.name == 'Crashlytics'})
+     elsif ['RNFBAnalytics', 'RNFBAuth'].include?(target.name)
+       target.add_system_framework(installer.pods_project.targets.find{|target| target.name == 'FirebaseAnalytics'})
+       target.add_system_framework(installer.pods_project.targets.find{|target| target.name == 'GoogleAppMeasurement'})
+       target.add_system_framework(installer.pods_project.targets.find{|target| target.name == 'nanopb'})
+       target.add_system_framework(installer.pods_project.targets.find{|target| target.name == 'GoogleUtilities'})
+#     elsif target.name.eql?('RNFBPerf')
+#       target.add_system_framework(installer.pods_project.targets.find{|target| target.name == 'FirebasePerformance'})
+#       target.add_system_framework(installer.pods_project.targets.find{|target| target.name == 'GTMSessionFetcher'})
+#       target.add_system_framework(installer.pods_project.targets.find{|target| target.name == 'GoogleToolboxForMac'})
+    end
+  end
+end

@@ -11,10 +11,20 @@ import AppNavigator from './src/AppNavigator'
 import NavigationService from './src/services/NavigationService'
 import PushdyMessaging from './src/services/Pushdy/PushdyMessaging';
 
+import * as FirebaseApp from "./src/services/Firebase/App";
+import * as FirebaseAnalytics from "./src/services/Firebase/Analytics";
+
 
 export default class App extends React.Component {
   componentDidMount() {
     PushdyMessaging.register();
+
+    FirebaseApp.initRNFirebaseService().then(() => {
+      // Test FirebaseAnalytics
+      setTimeout(() => {
+        FirebaseAnalytics.trackEvent('luatnd_test_firebase_analytics', { ok: true, ts: Date.now() })
+      }, 3000);
+    });
   }
 
   componentWillUnmount() {
